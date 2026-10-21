@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b18">
+<title>Ayush.exe — JEE 2027 Quest</title>
+<style>
+:root{--bg:#090b18;--panel:rgba(20,25,49,.78);--line:rgba(154,170,255,.19);--text:#f4f6ff;--muted:#aab2d2;--cyan:#6cf4ff;--pink:#ff73c8;--gold:#ffd978;--green:#8cffb5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 5%,#24275b 0,transparent 35%),radial-gradient(ellipse at 90% 20%,#3c1748 0,transparent 28%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:radial-gradient(#b6c7ff 1px,transparent 1px);background-size:36px 36px;z-index:-1}
+a{color:var(--cyan)}button,input,textarea{font:inherit}.wrap{max-width:1120px;margin:auto;padding:26px 18px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{letter-spacing:.18em;font-size:.78rem;color:var(--cyan);font-weight:900}.clock{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.9rem}
+.hero{padding:48px 0 28px;display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center}.eyebrow{color:var(--pink);font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:.74rem}.hero h1{font-size:clamp(2.8rem,8vw,6.4rem);line-height:.92;letter-spacing:-.075em;margin:14px 0 18px;text-shadow:0 0 35px #6cf4ff2b}.hero h1 span{display:block;background:linear-gradient(90deg,var(--cyan),#fff,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}.sub{color:var(--muted);line-height:1.7;max-width:650px}.orb-wrap{display:grid;place-items:center;min-height:230px}.orb{width:190px;height:190px;border-radius:50%;position:relative;background:radial-gradient(circle at 32% 25%,#fff 0 2%,#a8fbff 4%,#6b65ff 28%,#24214f 58%,#111428 70%);box-shadow:0 0 28px #6cf4ff66,0 0 75px #8c62ff55,inset -20px -15px 35px #0008;animation:float 5s ease-in-out infinite}.orb:before,.orb:after{content:"";position:absolute;inset:-17px;border:1px solid #6cf4ff8c;border-radius:50%;transform:rotate(-28deg) scaleY(.35)}.orb:after{transform:rotate(48deg) scaleY(.55);border-color:#ff73c888}@keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 14px 55px #0002;backdrop-filter:blur(12px);margin:15px 0}.panel h2{margin:0 0 8px;font-size:1.2rem}.muted{color:var(--muted);font-size:.92rem;line-height:1.55}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{border:1px solid var(--line);background:#ffffff06;border-radius:16px;padding:16px}.stat strong{display:block;font-size:1.6rem;margin-top:7px}.stat span{color:var(--muted);font-size:.78rem}.bar{height:9px;border-radius:20px;background:#ffffff12;overflow:hidden;margin:14px 0}.bar div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--pink));border-radius:20px;transition:width .4s}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.goals{display:grid;gap:10px}.goal{display:flex;gap:10px;align-items:center}.goal input{accent-color:var(--cyan);width:18px;height:18px}.goal input[type=text]{width:100%;background:#ffffff08;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px;min-width:0}.quest{display:grid;gap:11px}.task{display:grid;grid-template-columns:24px 1fr auto;gap:12px;align-items:start;padding:15px;border:1px solid var(--line);background:#ffffff04;border-radius:16px;transition:.2s}.task.active{border-color:#6cf4ff9c;box-shadow:0 0 22px #6cf4ff12}.task.done{opacity:.62;border-color:#8cffb577}.task.expired:not(.done){opacity:.48}.task input{width:19px;height:19px;margin-top:4px;accent-color:var(--green)}.task h3{margin:0 0 5px;font-size:1rem}.time{color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:.04em}.task p{margin:7px 0 0;color:var(--muted);font-size:.86rem;line-height:1.5}.xp{white-space:nowrap;color:var(--gold);font-size:.8rem;font-weight:800}.status{font-size:.72rem;border-radius:99px;padding:5px 8px;display:inline-block;margin-top:8px;background:#ffffff0d;color:var(--muted)}.status.now{color:var(--cyan);background:#6cf4ff14}.status.rest{color:var(--green)}.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}button{border:1px solid var(--line);background:#ffffff0b;color:var(--text);padding:11px 15px;border-radius:12px;cursor:pointer;transition:.2s}button:hover{transform:translateY(-1px);border-color:var(--cyan)}button.primary{background:linear-gradient(100deg,#47dce9,#b86eff);color:#080b18;border:0;font-weight:900}.quote{font-size:1.12rem;line-height:1.65}.quote b{color:var(--pink)}textarea{width:100%;min-height:90px;resize:vertical;background:#ffffff08;border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--text)}.footer{text-align:center;color:#8f98bc;font-size:.8rem;padding:24px 0}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);opacity:0;transition:.35s;background:#151b31;border:1px solid #6cf4ff80;box-shadow:0 0 35px #6cf4ff22;padding:15px 20px;border-radius:16px;z-index:10;max-width:90vw;text-align:center}.toast.show{transform:translate(-50%,0);opacity:1}.spark{position:fixed;pointer-events:none;font-size:18px;animation:rise 1.2s ease-out forwards;z-index:20}@keyframes rise{to{transform:translateY(-100px) rotate(30deg);opacity:0}}.rest-banner{display:none;border:1px solid #8cffb577;background:#8cffb50b;border-radius:16px;padding:15px;color:var(--green);margin-top:12px}.rest-banner.show{display:block}.small{font-size:.78rem;color:var(--muted)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:35px}.orb-wrap{min-height:150px;grid-row:1}.orb{width:125px;height:125px}.hero-copy{grid-row:2}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.panel{padding:17px}.task{grid-template-columns:22px 1fr}.xp{grid-column:2;justify-self:start}.wrap{padding:18px 13px 45px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">AYUSH.EXE <span style="color:var(--pink)">/ QUEST SYSTEM</span></div>
+    <div class="clock" id="clock">Loading local time…</div>
+  </div>
+  <header class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">JEE MAIN 2027 · 99 PERCENTILE MODE</div>
+      <h1>HELLO,<span>AYUSH.</span></h1>
+      <p class="sub">Aaj ka mission: show up, learn deeply, and protect your peace. You don't need a perfect day. You need the next good step.</p>
+      <div class="btns">
+        <button class="primary" id="startBtn">⚡ Start today's quest</button>
+        <button id="notifyBtn">🔔 Enable reminders</button>
+      </div>
+      <p class="small" id="notifyHelp">Reminders work while this page is open. Browser notifications may need permission and may not work on every phone/browser.</p>
+    </div>
+    <div class="orb-wrap"><div class="orb" aria-label="Glowing motivational planet"></div></div>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><span>TODAY'S XP</span><strong id="xp">0</strong></div>
+    <div class="stat"><span>QUESTS DONE</span><strong id="count">0/9</strong></div>
+    <div class="stat"><span>STREAK 🔥</span><strong id="streak">0 days</strong></div>
+    <div class="stat"><span>QUEST LEVEL</span><strong id="level">1</strong></div>
+  </section>
+  <div class="bar"><div id="progress"></div></div>
+  <p class="small" id="progressText">Every completed task earns XP. Skipped tasks are information, not failure.</p>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>🎯 Three daily goals</h2>
+      <p class="muted">Pick three priorities. Keep them specific and achievable.</p>
+      <div class="goals" id="goals">
+        <label class="goal"><input type="checkbox" data-goal-check="0"><input type="text" data-goal="0" placeholder="Goal 1 — e.g. revise one NCERT topic"></label>
+        <label class="goal"><input type="checkbox" data-goal-check="1"><input type="text" data-goal="1" placeholder="Goal 2 — e.g. chapter-wise PYQs"></label>
+        <label class="goal"><input type="checkbox" data-goal-check="2"><input type="text" data-goal="2" placeholder="Goal 3 — e.g. analyse mock mistakes"></label>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>💗 Triptii & your peace</h2>
+      <p class="quote">“I can care about someone and still build a life that is <b>my own.</b>”</p>
+      <p class="muted">Overthinking is a fear, not a prediction. You don't have to solve the whole relationship tonight. Breathe, don't chase reassurance, and return to the next thing you can control.</p>
+      <div class="btns"><button id="resetBtn">🫁 60-second mind reset</button></div>
+      <p class="small" id="resetMessage">Inhale gently for 4 seconds, exhale for 6. Repeat without forcing it.</p>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2>🗺️ Today's quest map</h2>
+    <p class="muted">Tasks follow your timetable. A task changes to REST when its time window ends. Tick it whenever you finish; completion is saved on this device.</p>
+    <div class="quest" id="questList"></div>
+    <div class="rest-banner" id="restBanner">🌿 REST MODE — This time block is over. You can let it go and move on to the next part of your day.</div>
+  </section>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>🧪 PYQ battle + error lab</h2>
+      <p class="muted">Use only chapters you've actually studied. Suggested starting range: Chemistry 15–25 questions, or Physics/Maths 20–30 if difficulty and time allow. Quality over quota.</p>
+      <textarea id="errorLog" placeholder="Write: question/topic · mistake type (concept/formula/calculation/reading) · correct idea"></textarea>
+      <div class="btns"><button class="primary" id="saveError">Save error analysis + earn 15 XP</button></div>
+      <p class="small" id="errorSaved"></p>
+    </section>
+    <section class="panel">
+      <h2>🌙 End-of-day thanks</h2>
+      <p class="quote" id="thanksText">Every honest effort counts. Your future is built one focused block at a time.</p>
+      <p class="muted">If the day didn't go as planned, choose one small win and start again tomorrow.</p>
+      <div class="btns"><button id="finishDay" class="primary">✨ Finish today's check-in</button><button id="resetDay">↻ Reset checklist</button></div>
+      <p class="small">Sleep matters: adults generally need 7–9 hours. With a 6:50 AM wake-up, studying until 1 AM leaves too little time. Shorten the late block when needed.</p>
+    </section>
+  </div>
+  <div class="footer">Built for Ayush · JEE Main 2027 · Progress over perfection ✦</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const tasks = [
+ {start:"06:50",end:"07:30",time:"6:50–7:30 AM",title:"Physical Power-Up",desc:"40 min exercise + cool-down.",xp:30},
+ {start:"07:30",end:"09:30",time:"7:30–9:30 AM",title:"Chemistry NCERT",desc:"Inorganic/Organic, formulas and short notes. Choose a topic from your actual syllabus.",xp:70},
+ {start:"09:30",end:"10:30",time:"9:30–10:30 AM",title:"Breakfast & commute",desc:"Eat, get ready, and travel without rushing.",xp:15},
+ {start:"10:30",end:"17:30",time:"10:30 AM–5:30 PM",title:"Coaching Main Quest",desc:"Active notes, mark doubts, and clarify concepts.",xp:80},
+ {start:"17:30",end:"18:30",time:"5:30–6:30 PM",title:"Recharge Zone",desc:"Commute home, snack, decompress.",xp:15},
+ {start:"18:30",end:"21:30",time:"6:30–9:30 PM",title:"PYQ Battle",desc:"Chapter-wise Physics/Maths or weak-topic practice. Choose chapters already studied; analyse wrong answers.",xp:80},
+ {start:"21:30",end:"22:00",time:"9:30–10:00 PM",title:"Dinner",desc:"Eat properly and recharge.",xp:10},
+ {start:"22:00",end:"22:45",time:"10:00–10:45 PM",title:"Mind Peace & Connection",desc:"Relax, connect with people you care about, and avoid doom-scrolling.",xp:20},
+ {start:"22:45",end:"25:00",time:"10:45 PM–1:00 AM",title:"Revision Boss",desc:"Coaching review, priority homework, backlog. Stop earlier if sleep needs protecting.",xp:50}
+];
+const $=id=>document.getElementById(id);
+const todayKey=()=>new Date().toLocaleDateString('en-CA');
+const storageKey=()=>`ayush-quest-${todayKey()}`;
+let state={done:[],errorXP:false,finished:false};
+let reminderTimers=[];
+function loadState(){
+ try{const raw=localStorage.getItem(storageKey());state=raw?JSON.parse(raw):{done:[],errorXP:false,finished:false};}catch(e){state={done:[],errorXP:false,finished:false};}
+ document.querySelectorAll('[data-goal]').forEach(el=>{el.value=localStorage.getItem(`ayush-goal-${todayKey()}-${el.dataset.goal}`)||"";});
+ document.querySelectorAll('[data-goal-check]').forEach(el=>{el.checked=localStorage.getItem(`ayush-goalcheck-${todayKey()}-${el.dataset.goalCheck}`)==="true";});
+ $('errorLog').value=localStorage.getItem(`ayush-error-${todayKey()}`)||"";
+ $('errorSaved').textContent=state.errorXP?"Error analysis saved — +15 XP earned.":"";
+ render();
+}
+function save(){try{localStorage.setItem(storageKey(),JSON.stringify(state));}catch(e){}}
+function mins(t){let [h,m]=t.split(':').map(Number);return h*60+m;}
+function nowMins(){let d=new Date();return d.getHours()*60+d.getMinutes();}
+function taskStatus(t){
+ let n=nowMins(),s=mins(t.start),e=t.end==="25:00"?1500:mins(t.end);
+ if(n<s)return {label:"UP NEXT",cls:""};
+ if(n<e)return {label:"ACTIVE NOW",cls:"now"};
+ return {label:"REST · TIME BLOCK ENDED",cls:"rest"};
+}
+function render(){
+ let list=$('questList');list.innerHTML="";
+ tasks.forEach((t,i)=>{
+  const st=taskStatus(t),done=state.done.includes(i);
+  const article=document.createElement('article');article.className='task'+(done?' done':'')+(st.cls==='now'&&!done?' active':'')+(st.cls==='rest'&&!done?' expired':'');
+  const cb=document.createElement('input');cb.type='checkbox';cb.checked=done;cb.setAttribute('aria-label','Complete '+t.title);
+  cb.addEventListener('change',()=>{if(cb.checked){if(!state.done.includes(i))state.done.push(i);toast(`Thank you, Ayush! ${t.title} complete. +${t.xp} XP ✨`);sparkles();}else state.done=state.done.filter(x=>x!==i);save();render();});
+  const content=document.createElement('div');
+  const h=document.createElement('h3');h.textContent=t.title;
+  const tm=document.createElement('div');tm.className='time';tm.textContent=t.time;
+  const p=document.createElement('p');p.textContent=t.desc;
+  const badge=document.createElement('span');badge.className='status '+(done?'rest':st.cls);badge.textContent=done?'✓ QUEST CLEARED':st.label;
+  content.append(h,tm,p,badge);
+  const xp=document.createElement('div');xp.className='xp';xp.textContent=`+${t.xp} XP`;
+  article.append(cb,content,xp);list.append(article);
+ });
+ updateStats();
+ const active=tasks.some(t=>{let s=mins(t.start),e=t.end==="25:00"?1500:mins(t.end);return nowMins()>=s&&nowMins()<e;});
+ $('restBanner').classList.toggle('show',!active);
+}
+function updateStats(){
+ const xp=state.done.reduce((n,i)=>n+tasks[i].xp,0)+(state.errorXP?15:0);
+ const count=state.done.length;
+ $('xp').textContent=xp;$('count').textContent=count+'/'+tasks.length;
+ $('progress').style.width=(count/tasks.length*100)+'%';
+ $('progressText').textContent=count===tasks.length?'All timetable quests checked. Thank you for showing up!':`${count} of ${tasks.length} tasks completed · ${Math.round(count/tasks.length*100)}% of checklist`;
+ $('level').textContent=1+Math.floor(xp/100);
+ let streak=Number(localStorage.getItem('ayush-streak')||0);
+ $('streak').textContent=streak+' day'+(streak===1?'':'s');
+ if(state.finished)$('thanksText').textContent='Thank you for showing up today, Ayush. You did what you could with the day you had. Rest now; tomorrow is a fresh run.';
+}
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),3000);}
+function sparkles(){for(let i=0;i<12;i++){let s=document.createElement('span');s.className='spark';s.textContent=['✦','✧','✨','★'][i%4];s.style.left=(15+Math.random()*70)+'vw';s.style.bottom='35px';document.body.append(s);setTimeout(()=>s.remove(),1250);}}
+function tickClock(){$('clock').textContent=new Intl.DateTimeFormat('en-IN',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(new Date());}
+function checkDate(){if(window._day!==todayKey()){window._day=todayKey();loadState();scheduleReminders();toast('New day, fresh quest. Hello, Ayush!');}}
+function scheduleReminders(){
+ reminderTimers.forEach(clearTimeout);reminderTimers=[];
+ const now=nowMins();
+ tasks.forEach(t=>{
+  let s=mins(t.start),e=t.end==="25:00"?1500:mins(t.end);
+  if(s>now){let delay=(s-now)*60000-new Date().getSeconds()*1000;reminderTimers.push(setTimeout(()=>{toast(`Quest time: ${t.title}. One step at a time.`);notify(`Quest time: ${t.title}`);render();},Math.max(1000,delay)));}
+  if(e>now&&e<1440){let delay=(e-now)*60000-new Date().getSeconds()*1000;reminderTimers.push(setTimeout(()=>{toast(`Time block ended. Rest or move to the next task — no guilt.`);notify(`Time block ended: ${t.title}. Move on gently.`);render();},Math.max(1000,delay)));}
+ });
+}
+function notify(message){if('Notification'in window&&Notification.permission==='granted'){try{new Notification('Ayush.exe — JEE Quest',{body:message,icon:''});}catch(e){}}}
+document.querySelectorAll('[data-goal]').forEach(el=>el.addEventListener('input',()=>localStorage.setItem(`ayush-goal-${todayKey()}-${el.dataset.goal}`,el.value)));
+document.querySelectorAll('[data-goal-check]').forEach(el=>el.addEventListener('change',()=>localStorage.setItem(`ayush-goalcheck-${todayKey()}-${el.dataset.goalCheck}`,el.checked)));
+$('errorLog').addEventListener('input',()=>localStorage.setItem(`ayush-error-${todayKey()}`,$('errorLog').value));
+$('saveError').addEventListener('click',()=>{
+ if(!$('errorLog').value.trim()){toast('Write at least one mistake or lesson first.');return;}
+ if(!state.errorXP){state.errorXP=true;save();render();sparkles();}
+ $('errorSaved').textContent='Saved for today — +15 XP earned. Nice work learning from mistakes.';
+ toast('Error lab complete. Learning from mistakes = progress.');
+});
+$('finishDay').addEventListener('click',()=>{
+ state.finished=true;save();
+ let last=localStorage.getItem('ayush-last-finish'),streak=Number(localStorage.getItem('ayush-streak')||0);
+ const yesterday=new Date(Date.now()-86400000).toLocaleDateString('en-CA');
+ if(last!==todayKey()){streak=(last===yesterday)?streak+1:1;localStorage.setItem('ayush-streak',String(streak));localStorage.setItem('ayush-last-finish',todayKey());}
+ updateStats();toast('Thank you, Ayush. You showed up today. ❤️');sparkles();
+});
+$('resetDay').addEventListener('click',()=>{
+ if(confirm('Reset today’s task checkboxes and XP? Your saved goals and error notes will stay.')){state={done:[],errorXP:false,finished:false};save();render();toast('Checklist reset. This is a fresh attempt, not a failure.');}
+});
+$('startBtn').addEventListener('click',()=>{document.querySelector('.panel:last-of-type').scrollIntoView({behavior:'smooth'});toast('Quest started. Pick the next task, not the whole mountain.');});
+$('resetBtn').addEventListener('click',()=>{
+ $('resetMessage').textContent='Breathe gently: in for 4, out for 6. Notice five things around you. Say: “I can care and still focus on my life.”';
+ toast('Mind reset started. You are here, in this moment.');setTimeout(()=>{$('resetMessage').textContent='Reset complete. Choose one thing you control and give it your attention.';},60000);
+});
+$('notifyBtn').addEventListener('click',async()=>{
+ if(!('Notification'in window)){toast('Notifications are not supported in this browser. Keep the page open for on-page reminders.');return;}
+ try{let p=await Notification.requestPermission();if(p==='granted'){toast('Notifications enabled for this browser session/site.');notify('You’re set. One step at a time, Ayush.');}else toast('Permission not enabled. On-page reminders still work while open.');}catch(e){toast('Notifications need a supported browser and permission.');}
+});
+window._day=todayKey();loadState();tickClock();setInterval(tickClock,1000);setInterval(()=>{checkDate();render();},30000);scheduleReminders();
+</script>
+</body>
+</html>
